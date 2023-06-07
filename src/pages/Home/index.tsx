@@ -1,14 +1,20 @@
+import Notes from 'components/Notes';
+import AddNote from 'components/Notes/AddNote';
 import Layout from 'layouts/default';
+import { useNotes } from 'lib/hooks';
 
 export const HOME_TEST_ID = 'home';
 
 const Home = () => {
+  const { notes } = useNotes();
+
   return (
     <Layout>
-      <div data-testid={HOME_TEST_ID} className="h-full">
-        <div className="flex flex-col items-center content-center justify-end h-full">
-          <h4 className="mb-6 text-3xl">React Jest Testing</h4>
-        </div>
+      <div
+        data-testid={HOME_TEST_ID}
+        className="container max-w-sm min-h-full px-4 py-12 mx-auto "
+      >
+        <Notes notes={notes} />
       </div>
     </Layout>
   );
