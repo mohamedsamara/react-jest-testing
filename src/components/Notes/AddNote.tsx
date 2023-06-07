@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
+
 import { AddNoteForm, noteFormSchema } from 'lib/types';
+import { handleError, sleep } from 'lib/utils';
 import { useNotes } from 'lib/hooks';
 import Button from 'components/common/Button';
 import Heading from 'components/common/Heading';
 import InlineError from 'components/common/InlineError';
-import { handleError, sleep } from 'lib/utlis';
 
 const AddNote = () => {
   const {
@@ -19,7 +20,6 @@ const AddNote = () => {
     resolver: zodResolver(noteFormSchema),
   });
   const [loading, setLoading] = useState(false);
-
   const { saveNote } = useNotes();
 
   const onSubmit: SubmitHandler<AddNoteForm> = async (data) => {

@@ -1,7 +1,6 @@
-import Notes from 'components/Notes';
-import AddNote from 'components/Notes/AddNote';
-import Layout from 'layouts/default';
 import { useNotes } from 'lib/hooks';
+import Notes from 'components/Notes';
+import Layout from 'layouts/default';
 
 export const HOME_TEST_ID = 'home';
 

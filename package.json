@@ -19,7 +19,9 @@
     "typescript",
     "@testing-library/react",
     "cypress",
-    "jest"
+    "jest",
+    "zod",
+    "tailwindcss"
   ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "MIT",

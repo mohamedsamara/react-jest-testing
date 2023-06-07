@@ -1,8 +1,8 @@
 import { Note } from 'lib/types';
 import Layout from 'layouts/default';
+import Heading from 'components/common/Heading';
 import NoteList from './NoteList';
 import AddNote from './AddNote';
-import Heading from 'components/common/Heading';
 
 interface NotesProps {
   notes: Note[];
