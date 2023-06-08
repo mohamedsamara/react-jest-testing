@@ -9,7 +9,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
-    "test": "jest",
+    "test": "jest --watch",
     "cypress:open": "cypress open"
   },
   "keywords": [

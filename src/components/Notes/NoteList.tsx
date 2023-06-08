@@ -4,6 +4,9 @@ import NoteItem from './NoteItem';
 interface NoteListProps {
   notes: Note[];
 }
+
+export const NOTE_LIST_TEST_ID = 'note-list';
+
 const NoteList = (props: NoteListProps) => {
   const { notes } = props;
 
@@ -11,7 +14,7 @@ const NoteList = (props: NoteListProps) => {
     return <p className="mt-4 text-gray-400">No notes found</p>;
 
   return (
-    <div className="my-8">
+    <div className="my-8" data-testid={NOTE_LIST_TEST_ID}>
       {notes.map((note) => (
         <div key={note.uid} className="mb-4">
           <NoteItem note={note} />

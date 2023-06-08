@@ -5,7 +5,7 @@ import { noteAtom } from 'lib/stores';
 export const useNotes = () => {
   const [notes, setNotes] = useAtom(noteAtom);
 
-  const saveNote = async (title: string, content: string) => {
+  const addNote = async (title: string, content: string) => {
     setNotes([{ uid: uuidv4(), title, content }, ...notes]);
   };
 
@@ -13,5 +13,5 @@ export const useNotes = () => {
     setNotes(notes.filter((n) => n.uid !== uid));
   };
 
-  return { notes, saveNote, deleteNote };
+  return { notes, addNote, deleteNote };
 };

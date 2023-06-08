@@ -10,6 +10,8 @@ import Button from 'components/common/Button';
 import Heading from 'components/common/Heading';
 import InlineError from 'components/common/InlineError';
 
+export const ADD_NOTE_TEST_ID = 'add-note';
+
 const AddNote = () => {
   const {
     register,
@@ -20,12 +22,12 @@ const AddNote = () => {
     resolver: zodResolver(noteFormSchema),
   });
   const [loading, setLoading] = useState(false);
-  const { saveNote } = useNotes();
+  const { addNote } = useNotes();
 
   const onSubmit: SubmitHandler<AddNoteForm> = async (data) => {
     try {
       setLoading(true);
-      await saveNote(data.title, data.content);
+      await addNote(data.title, data.content);
       await sleep();
       reset();
     } catch (error) {
@@ -38,6 +40,7 @@ const AddNote = () => {
 
   return (
     <form
+      data-testid={ADD_NOTE_TEST_ID}
       onSubmit={handleSubmit(onSubmit)}
       className="px-4 py-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
