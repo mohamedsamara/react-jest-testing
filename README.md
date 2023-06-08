@@ -2,6 +2,8 @@
 
 # Description
 
+This project is an example of building unit tests utilizing Jest & react testing library
+
 ## Quick start
 
 1.  Clone this repo using `git clone https://github.com/mohamedsamara/react-jest-testing.git`
